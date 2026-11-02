@@ -1,59 +1,77 @@
 # C++ Laboratory Works
 
-A collection of C++ programming assignments completed as part of the *Fundamentals of Algorithmization and Programming* course. The projects focus on basic calculations, user input, expressions, operators, and formatted console output.
+A collection of C++ laboratory assignments for the **Fundamentals of Algorithmization and Programming** course (*Основы алгоритмизации и программирования*).
+
+The programs cover basic calculations, operators, conditional statements, loops, functions, and arrays. Each laboratory work is a separate console application.
 
 ## Repository Structure
 
-- `first.cpp` — Laboratory Work No. 3: an interactive program with a mathematical formula calculator and a fuel/trip cost calculator.
-- `4th_lab.cpp` — Laboratory Work No. 4: an updated trip cost calculator demonstrating additional C++ operators and C++23 formatted output.
-- `.gitignore` — excludes compiled binaries and other generated files from version control.
+```text
+3rd_lab/3rd_lab.cpp   # Lab 3: formulas and trip cost
+4th_lab/4th_lab.cpp   # Lab 4: operators and expressions
+5th_lab/5th_lab.cpp   # Lab 5: conditions and functions
+6th_lab/6th_lab.cpp   # Lab 6: loops
+7th_lab/7th_lab.cpp   # Lab 7: one-dimensional arrays
+8th_lab/8th_lab.cpp   # Lab 8: two-dimensional arrays
+README.md
+```
 
-> If your source files use different names, update the filenames in this section to match the repository.
+## Laboratory Works
 
-## Laboratory Work No. 3 — Linear Programs
+| Lab | Topic | What the program does |
+| --- | --- | --- |
+| **3** | Linear programs | Calculates an expression for the individual variant and estimates trip/fuel costs. |
+| **4** | Operators and expressions | Extends the trip cost calculator and demonstrates `sizeof`, increment/decrement, ternary and compound assignment operators, and C++23 output. |
+| **5** | Conditions and functions | Includes deposit interest, a simple bank account menu, animal shelter food expenses, and the function `f(x) = 3x + 2`. |
+| **6** | Loops | Calculates sums and counts, Fibonacci numbers, a sum of positive odd values, and a function table. |
+| **7** | One-dimensional arrays | Counts and sums array elements smaller than a user-entered value `B`. |
+| **8** | Two-dimensional arrays | Calculates the sum of the main diagonal and transposes a 4×4 matrix. |
 
-- **Individual task (Variant 28):** calculates a mathematical expression using functions from `<cmath>`. According to the cyclic numbering rule, Variant 28 corresponds to Variant 13 in the methodical guide.
-- **Trip cost calculator:** asks the user for the trip distance, fuel consumption, fuel price, and additional costs, then calculates the estimated fuel required and total trip cost.
-
-## Laboratory Work No. 4 — Operators and Expressions
-
-This assignment extends the trip cost calculator from Laboratory Work No. 3 and demonstrates:
-
-- `++` and `--` increment and decrement operators;
-- `sizeof` for checking the sizes of `int`, `double`, `bool`, and `char`;
-- the ternary operator (`?:`) for selecting a currency label;
-- compound assignment operators such as `+=` and `*=`;
-- C++23 formatted output with `std::print` and `std::println`;
-- comments explaining the added operators and changes.
+The assignments use **individual variant 28**. For Labs 7–8, the guide contains 16 variants, so variant 28 corresponds to task variant 12. The earlier assignments use the numbering applicable to their own guides.
 
 ## Requirements
 
-- A C++23-compatible compiler and standard library.
-- `g++` (recent version recommended for `std::print` and `std::println`).
-- Linux, WSL Debian, or another environment with a C++ compiler.
+- A C++ compiler such as `g++`.
+- **C++23** support, including `std::print` / `std::println`, for Lab 4.
+- **C++17** is sufficient for Labs 5–8.
+- VS Code and WSL Debian are optional; any suitable C++ development environment can be used.
 
 ## Build and Run
 
-Compile Laboratory Work No. 3:
+Run these commands from the repository root.
+
+For Lab 3:
 
 ```bash
-g++ -std=c++23 -Wall -Wextra -Wpedantic first.cpp -o lab3
+g++ -std=c++17 3rd_lab/3rd_lab.cpp -o lab3
 ./lab3
 ```
 
-Compile Laboratory Work No. 4:
+For Lab 4 (requires C++23 support):
 
 ```bash
-g++ -std=c++23 -Wall -Wextra -Wpedantic 4th_lab.cpp -o lab4
+g++ -std=c++23 4th_lab/4th_lab.cpp -o lab4
 ./lab4
 ```
 
-Run the commands from the directory containing the source files. If `std::print` or `std::println` is not available, install or select a newer compiler and standard library with C++23 support.
+For Labs 5–8:
 
-## Development Environment
+```bash
+g++ -std=c++17 5th_lab/5th_lab.cpp -o lab5
+./lab5
 
-The programs are intended to be edited in Visual Studio Code and compiled in a Debian environment through Windows Subsystem for Linux (WSL).
+g++ -std=c++17 6th_lab/6th_lab.cpp -o lab6
+./lab6
 
-## License
+g++ -std=c++17 7th_lab/7th_lab.cpp -o lab7
+./lab7
 
-This repository is intended for educational and portfolio purposes.
+g++ -std=c++17 8th_lab/8th_lab.cpp -o lab8
+./lab8
+```
+
+Each program runs independently and provides a console menu for its tasks.
+
+## Notes
+
+The source code is kept simple and readable for introductory C++ practice. Array values in Labs 7 and 8 are initialized directly in the code, as required by the assignment.

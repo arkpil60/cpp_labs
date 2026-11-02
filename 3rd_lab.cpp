@@ -24,8 +24,6 @@ void task1() {
         return;
     }
 
-    // g = y^(x+1) / (cbrt(|y - 2|) + 3)
-    //   + (x + y/2) / (2*|x + y|) * (x + 1)^(-1/sin(z))
     const double denominator1 = std::cbrt(std::abs(y - 2.0)) + 3.0;
     const double denominator2 = 2.0 * std::abs(x + y);
     const double sinZ = std::sin(z);
@@ -62,7 +60,7 @@ void task1() {
 void task2() {
     double distanceKm{}, fuelConsumption{}, fuelPrice{}, additionalCosts{};
 
-    std::cout << "\n=== Task 2: Trip cost calculator ===\n";
+    std::cout << "\nTask 2: Trip cost calculator\n";
 
     std::cout << "Enter trip distance (km): ";
     if (!(std::cin >> distanceKm) || distanceKm < 0.0) {

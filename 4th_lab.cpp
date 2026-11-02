@@ -23,7 +23,7 @@ void calculateTripCost() {
 
     int valuesRemaining = 5;
 
-    std::println("=== Trip cost calculator ===");
+    std::println("Trip cost calculator");
 
     std::print("Enter trip distance (km): ");
     if (!(std::cin >> distanceKm) || distanceKm < 0.0) {
@@ -88,7 +88,7 @@ void calculateTripCost() {
     }
 
     std::println("");
-    std::println("=== Calculation result ===");
+    std::println("Calculation result");
     std::println("Distance: {:.2f} km", distanceKm);
     std::println("Fuel needed: {:.2f} litres", fuelNeeded);
     std::println("Fuel cost: {:.2f} {}", fuelCost, currencySymbol);

@@ -17,8 +17,6 @@ Laboratory works **1–2** were completed as handwritten flowcharts and have no 
 
 The source files are stored directly in the repository root.
 
-**Variants:** The assigned number is 28. Where a guide contains fewer than 28 variants, the solutions follow an assumed cyclic mapping: laboratory 3 and 5 → variant 13 (15 entries), laboratory 6 → variant 3 (25 entries), laboratory 7–8 → variant 12 (16 entries). This mapping should be confirmed with the instructor.
-
 ## Build and run
 
 Requires a C++ compiler. Laboratory 4 needs C++23 with `<print>` support. The other source files use C++17.
@@ -40,4 +38,3 @@ Each command compiles and runs one laboratory work. The next command overwrites 
 
 - Arrays in laboratory works 7–8 are initialized directly in the code, as required by the guide.
 - The currency choice in laboratory 4 changes only the displayed currency label; it does not convert exchange rates.
-- Before demonstrating laboratory 6, replace `YOUR_SURNAME` in `6th_lab.cpp` with your surname.

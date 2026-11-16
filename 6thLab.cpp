@@ -116,7 +116,7 @@ double calculateF(double k) {
 
 void printTableHeader() {
     // Replace this placeholder with your real surname before submitting.
-    std::cout << "Surname: YOUR_SURNAME\n";
+    std::cout << "Surname: Russu\n";
     std::cout << std::setw(10) << "k" << std::setw(14) << "F(k)" << '\n';
 }
 

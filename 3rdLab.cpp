@@ -99,7 +99,7 @@ void task2() {
 }
 
 int main() {
-    std::cout << "Laboratory work 3\n"
+    std::cout << "Laboratory work No. 3\n"
               << "1 - Calculate function (variant 28)\n"
               << "2 - Calculate trip cost\n"
               << "Choose task (1 or 2): ";

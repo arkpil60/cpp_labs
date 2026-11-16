@@ -1,3 +1,4 @@
+#include <cmath>
 #include <iomanip>
 #include <iostream>
 
@@ -5,7 +6,7 @@ void task1() {
     constexpr double minVznos = 100.0;
     double summaSheta{};
 
-    std::cout << "\nTask 1: Bank deposit\nEnter the deposit amount: ";
+    std::cout << "\n=== Task 1: Bank deposit ===\nEnter the deposit amount: ";
     if (!(std::cin >> summaSheta) || summaSheta < 0.0) {
         std::cout << "Error: enter a non-negative amount.\n";
         return;
@@ -27,7 +28,7 @@ void task2() {
     constexpr int correctAccountNumber = 5143;
     double balance = 2560.0;
     int accountNumber{}, choice{};
-    std::cout << "\nTask 2: Bank account\nEnter account number: ";
+    std::cout << "\n=== Task 2: Bank account ===\nEnter account number: ";
     if (!(std::cin >> accountNumber)) {
         std::cout << "Error: account number must be an integer.\n";
         return;
@@ -83,7 +84,7 @@ void task3() {
     int enteredPassword{}, choice{};
     double catCost{}, dogCost{};
 
-    std::cout << "\nTask 3: Animal shelter expenses\nEnter password: ";
+    std::cout << "\n=== Task 3: Animal shelter expenses ===\nEnter password: ";
     if (!(std::cin >> enteredPassword)) {
         std::cout << "Error: password must be an integer.\n";
         return;
@@ -149,13 +150,53 @@ void task3() {
 }
 
 void task4() {
-    double x{};
-    std::cout << "\nTask 4: Function calculation\nGiven f(x) = 3 * x + 2\nEnter x: ";
+    // Variant 13 (28 in a repeating list of 15 variants).
+    double x{}, y{};
+    std::cout << "\nTask 4: Piecewise function, variant 13\n"
+              << "f(x) = 3*x + 2\nEnter x: ";
     if (!(std::cin >> x)) {
         std::cout << "Error: x must be a number.\n";
         return;
     }
-    std::cout << std::fixed << std::setprecision(2) << "f(" << x << ") = " << 3.0 * x + 2.0 << '\n';
+    std::cout << "Enter y: ";
+    if (!(std::cin >> y)) {
+        std::cout << "Error: y must be a number.\n";
+        return;
+    }
+
+    if (y == 0.0) {
+        std::cout << "Error: x/y is undefined when y = 0.\n";
+        return;
+    }
+
+    const double f = 3.0 * x + 2.0;
+    double result{};
+
+    if (x / y > 0.0) {
+        if (y <= 0.0) {
+            std::cout << "Error: ln(y) requires y > 0.\n";
+            return;
+        }
+        result = std::pow(f + std::log(y), 3.0);
+    } else if (x / y < 0.0) {
+        const double absSinY = std::abs(std::sin(y));
+        if (absSinY == 0.0) {
+            std::cout << "Error: ln(|sin(y)|) is undefined.\n";
+            return;
+        }
+        result = 2.0 / 3.0 + std::log(absSinY);
+    } else {
+        result = std::cbrt(f * f + y);
+    }
+
+    if (!std::isfinite(result)) {
+        std::cout << "Error: result is not a finite number.\n";
+        return;
+    }
+
+    std::cout << std::fixed << std::setprecision(6)
+              << "f(x) = " << f << '\n'
+              << "b = " << result << '\n';
 }
 
 int main() {
@@ -164,7 +205,7 @@ int main() {
               << "1 - Bank deposit interest\n"
               << "2 - Bank account menu\n"
               << "3 - Animal shelter food expenses\n"
-              << "4 - Calculate f(x) = 3*x + 2\nChoose a task (1-4): ";
+              << "4 - Piecewise function (variant 13)\nChoose a task (1-4): ";
     if (!(std::cin >> choice)) {
         std::cout << "Error: enter a number from 1 to 4.\n";
         return 1;
